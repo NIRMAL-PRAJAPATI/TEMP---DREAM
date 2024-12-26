@@ -75,8 +75,8 @@ gsap.fromTo(".step_bstep_cards",{
     scrollTrigger:{
         trigger: ".step_bstep_cards",
         start: "top 70%",
-        end: "bottom 90%",
-        stagger: 0.5
+        end: "bottom bottom",
+        stagger: 0.5,
     }
 })
 
