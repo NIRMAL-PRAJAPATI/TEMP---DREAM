@@ -177,3 +177,23 @@ document.addEventListener("resize",()=>{
   }
 })
 
+gsap.utils.toArray(".number_inc").forEach((section, i) => {
+  const targetValue = parseInt(section.dataset.val, 10); // Parse the target value as an integer
+  let obj = {value:0}
+  gsap.fromTo(obj,
+    { value: 0 }, // Start value as an object property
+    { 
+      value: targetValue, 
+      duration: 3, 
+      ease: "power4.out", 
+      scrollTrigger: {
+        trigger: ".star_grid",
+        start: "top center",
+      },
+      onUpdate: function () {
+        // console.log(this)
+        section.innerText = Math.floor(this.targets()[0].value) + '+'; // Update the text with the integer value
+      },
+    }
+  );
+});
